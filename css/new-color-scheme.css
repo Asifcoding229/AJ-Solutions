@@ -1,0 +1,266 @@
+/* New Modern Eye-Catching Color Scheme for AJ Solutions */
+
+:root {
+  /* Primary Colors */
+  --primary-color: #6200EA;      /* Deep Purple */
+  --secondary-color: #00E5FF;    /* Bright Cyan */
+  --accent-color: #FF3D00;       /* Vibrant Orange */
+  
+  /* Background Colors */
+  --bg-dark: #121212;            /* Near Black */
+  --bg-darker: #0A0A0A;          /* True Black */
+  --bg-gradient: linear-gradient(135deg, #121212 0%, #1E1E1E 100%);
+  
+  /* Text Colors */
+  --text-primary: #FFFFFF;       /* White */
+  --text-secondary: #E0E0E0;     /* Light Gray */
+  --text-muted: #9E9E9E;         /* Medium Gray */
+  
+  /* Accent Colors */
+  --accent-gradient: linear-gradient(135deg, #FF3D00 0%, #FF9100 100%);
+  --secondary-gradient: linear-gradient(135deg, #00E5FF 0%, #00B8D4 100%);
+  --primary-gradient: linear-gradient(135deg, #6200EA 0%, #9D46FF 100%);
+  
+  /* Success/Error Colors */
+  --success-color: #00C853;      /* Green */
+  --error-color: #FF1744;        /* Red */
+  --warning-color: #FFAB00;      /* Amber */
+  --info-color: #2979FF;         /* Blue */
+  
+  /* Card and UI Element Colors */
+  --card-bg: rgba(30, 30, 30, 0.7);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  
+  /* Hover Effects */
+  --hover-overlay: rgba(255, 255, 255, 0.05);
+  --active-overlay: rgba(255, 255, 255, 0.1);
+  
+  /* Animation Timing */
+  --transition-fast: 0.2s;
+  --transition-medium: 0.3s;
+  --transition-slow: 0.5s;
+}
+
+/* Apply new color scheme to existing elements */
+
+body {
+  background: var(--bg-dark);
+  color: var(--text-primary);
+}
+
+header {
+  background: var(--bg-darker);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.logo h1 {
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+}
+
+.nav-links a:hover, 
+.nav-links a.active {
+  color: var(--secondary-color);
+}
+
+.hero {
+  background: var(--bg-gradient);
+}
+
+.hero h1 span {
+  color: var(--accent-color);
+}
+
+.btn-primary {
+  background: var(--primary-gradient);
+  color: var(--text-primary);
+  border: none;
+  box-shadow: 0 4px 15px rgba(98, 0, 234, 0.3);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 6px 20px rgba(98, 0, 234, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: var(--secondary-gradient);
+  color: var(--bg-darker);
+}
+
+.section-title h2 {
+  color: var(--text-primary);
+}
+
+.section-title h2::after {
+  background: var(--accent-gradient);
+}
+
+.service-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+}
+
+.service-card:hover {
+  border-color: var(--secondary-color);
+  box-shadow: 0 10px 30px rgba(0, 229, 255, 0.2);
+}
+
+.service-icon {
+  color: var(--secondary-color);
+}
+
+.service-card h3 {
+  color: var(--text-primary);
+}
+
+.about-content {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+}
+
+.portfolio-filters .filter-btn {
+  background: var(--card-bg);
+  color: var(--text-secondary);
+}
+
+.portfolio-filters .filter-btn.active {
+  background: var(--primary-gradient);
+  color: var(--text-primary);
+}
+
+.portfolio-item {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+}
+
+.portfolio-overlay {
+  background: linear-gradient(to top, rgba(10, 10, 26, 0.9), rgba(10, 10, 26, 0.5));
+}
+
+.testimonial-item {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+}
+
+.contact-form .form-control {
+  background: rgba(30, 30, 30, 0.5);
+  border: 1px solid var(--card-border);
+  color: var(--text-primary);
+}
+
+.contact-form .form-control:focus {
+  border-color: var(--secondary-color);
+}
+
+footer {
+  background: var(--bg-darker);
+}
+
+.social-links a {
+  background: var(--card-bg);
+  color: var(--text-primary);
+}
+
+.social-links a:hover {
+  background: var(--primary-color);
+}
+
+.back-to-top {
+  background: var(--accent-color);
+  color: var(--text-primary);
+}
+
+/* New Glowing Effects */
+
+.glow-effect {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.glow-effect::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: var(--secondary-gradient);
+  z-index: -1;
+  filter: blur(15px);
+  opacity: 0;
+  transition: opacity var(--transition-medium);
+}
+
+.glow-effect:hover::before {
+  opacity: 0.7;
+}
+
+/* Neon Text Effect */
+
+.neon-text {
+  text-shadow: 0 0 5px rgba(0, 229, 255, 0.5),
+               0 0 10px rgba(0, 229, 255, 0.3),
+               0 0 15px rgba(0, 229, 255, 0.1);
+}
+
+/* Glassmorphism Effect */
+
+.glass-effect {
+  background: rgba(30, 30, 30, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Gradient Text */
+
+.gradient-text {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Cursor Animation Update */
+
+.cursor-dot {
+  background-color: var(--secondary-color);
+}
+
+.cursor-circle {
+  border-color: var(--secondary-color);
+}
+
+.cursor-trail {
+  background-color: var(--accent-color);
+}
+
+/* Service Card Hover Update */
+
+.service-card::before {
+  background: linear-gradient(135deg, rgba(98, 0, 234, 0.1), rgba(0, 229, 255, 0.1));
+}
+
+/* Hero Background Update */
+
+.hero-bg-shape.shape-1 {
+  background: var(--primary-color);
+}
+
+.hero-bg-shape.shape-2 {
+  background: var(--secondary-color);
+}
+
+.hero-bg-shape.shape-3 {
+  background: var(--accent-color);
+}

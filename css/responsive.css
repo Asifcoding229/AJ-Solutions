@@ -1,0 +1,411 @@
+/* Responsive Design Enhancements */
+
+/* Mobile-First Media Queries */
+/* Base styles are already mobile-friendly */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+  
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+  
+  h1 {
+    font-size: 3rem;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+  }
+  
+  .nav-links {
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+  
+  .nav-links li {
+    margin: 0 0 0 2rem;
+  }
+  
+  .hamburger {
+    display: none;
+  }
+  
+  .about-content {
+    flex-direction: row;
+  }
+  
+  .footer-content {
+    flex-direction: row;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+  
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .portfolio-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .contact-form {
+    max-width: 800px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) {
+  /* Replace hover effects with active state for touch devices */
+  .service-card:active {
+    transform: translateY(-10px);
+  }
+  
+  .btn-primary:active {
+    transform: translateY(-3px);
+  }
+  
+  .portfolio-item:active .portfolio-overlay {
+    opacity: 1;
+  }
+  
+  /* Disable cursor animations on touch devices */
+  .cursor-animation {
+    display: none;
+  }
+  
+  /* Enhance touch targets for better accessibility */
+  .nav-links a,
+  .btn,
+  .social-links a {
+    padding: 0.8rem;
+  }
+  
+  /* Adjust card animations for touch */
+  .service-card {
+    transform-style: flat;
+  }
+}
+
+/* Orientation Changes */
+@media (orientation: landscape) and (max-height: 500px) {
+  /* Adjust for landscape mode on small devices */
+  .hero {
+    height: auto;
+    min-height: 100vh;
+    padding: 6rem 0;
+  }
+  
+  .section {
+    padding: 3rem 0;
+  }
+  
+  .nav-links.active {
+    padding: 1rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+  
+  header, 
+  footer, 
+  .hero-bg, 
+  .back-to-top, 
+  .cursor-animation,
+  .contact-form,
+  .portfolio-filters {
+    display: none;
+  }
+  
+  .container {
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  section {
+    padding: 1rem 0;
+    page-break-inside: avoid;
+  }
+  
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+  
+  .service-card,
+  .about-content,
+  .portfolio-item {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  :root {
+    --primary-color: #0000cc;
+    --secondary-color: #008800;
+    --accent-color: #cc00cc;
+    --bg-dark: #000000;
+    --bg-darker: #000000;
+    --text-primary: #ffffff;
+    --text-secondary: #ffffff;
+  }
+  
+  .service-card,
+  .portfolio-item,
+  .testimonial-item,
+  .contact-form .form-control {
+    border: 2px solid white;
+  }
+  
+  a, button, .btn {
+    text-decoration: underline;
+  }
+}
+
+/* Reduced Data Usage */
+@media (prefers-reduced-data: reduce) {
+  /* Disable background videos and heavy animations */
+  .hero-bg-shape,
+  .parallax-bg,
+  .cursor-animation {
+    display: none;
+  }
+  
+  /* Use solid colors instead of gradients */
+  .btn-primary,
+  .service-card::before {
+    background: var(--accent-color);
+    background-image: none;
+  }
+  
+  body {
+    background: var(--bg-dark);
+    background-image: none;
+  }
+}
+
+/* Responsive Typography */
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 576px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 992px) {
+  html {
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 1200px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+/* Responsive Service Cards */
+@media (max-width: 767px) {
+  .service-card {
+    padding: 1.5rem;
+  }
+  
+  .service-icon {
+    font-size: 2rem;
+  }
+  
+  .service-card h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Responsive Hero Section */
+@media (max-width: 767px) {
+  .hero {
+    text-align: center;
+  }
+  
+  .hero-content {
+    padding: 0 1rem;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+/* Responsive Navigation */
+@media (max-width: 767px) {
+  .header-container {
+    padding: 0 1rem;
+  }
+  
+  .logo h1 {
+    font-size: 1.2rem;
+  }
+  
+  .nav-links {
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    background: var(--bg-dark);
+    position: fixed;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .nav-links.active {
+    right: 0;
+  }
+  
+  .nav-links li {
+    margin: 1.5rem 0;
+  }
+  
+  .hamburger {
+    display: block;
+    z-index: 1001;
+  }
+}
+
+/* Responsive Form Elements */
+@media (max-width: 576px) {
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-control {
+    padding: 0.6rem;
+  }
+  
+  textarea.form-control {
+    min-height: 100px;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+}
+
+/* Responsive Footer */
+@media (max-width: 767px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-logo, 
+  .footer-links {
+    margin-bottom: 2rem;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+}
+
+/* Responsive Portfolio */
+@media (max-width: 576px) {
+  .portfolio-filters {
+    flex-wrap: wrap;
+  }
+  
+  .filter-btn {
+    margin: 0.25rem;
+  }
+}
+
+/* Accessibility Enhancements */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Focus styles for keyboard navigation */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus,
+.service-card:focus-within,
+.portfolio-item:focus-within {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* Skip to content link for keyboard users */
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--accent-color);
+  color: white;
+  padding: 8px;
+  z-index: 100;
+  transition: top 0.3s ease;
+}
+
+.skip-to-content:focus {
+  top: 0;
+}
