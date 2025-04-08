@@ -1,0 +1,7 @@
+// Update index.html to include animations.css and animations.js
+
+// Add this line in the head section after styles.css
+<link rel="stylesheet" href="css/animations.css">
+
+// Add this line before the closing body tag, after main.js
+<script src="js/animations.js"></script>
